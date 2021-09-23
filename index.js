@@ -21,9 +21,9 @@ function getPizzaOrder() {
   // HINT: You may wish to use .toLowerCase() and .trim()
   // if the user specified 'thick' crust, add thickCrustUpcharge
   // to pizza.cost
-  pizza.crust = crust
+  pizza.crust = crust.toLowerCase().trim()
 
-  if (crust.toLowerCase().trim() == "thick") {
+  if (crust === "thick") {
     pizza.cost += thickCrustUpcharge;
   }
 
@@ -34,7 +34,7 @@ function getPizzaOrder() {
   // if no toppings are given, make sure pizza.toppings is set to []
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
-  if (toppings == "") {
+  if (toppings === "") {
     pizza.toppings = []
     pizza.cost
   } else {
@@ -52,7 +52,7 @@ function getPizzaOrder() {
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   pizza.extraCheese = extraCheese
 
-  if (extraCheese == true) {
+  if (extraCheese === true) {
     pizza.cost += extraCheeseUpcharge
   }
 
@@ -63,7 +63,7 @@ function getPizzaOrder() {
   // if order if for delivery, add deliveryFee to pizza.cost
   pizza.saleType = isDelivery
 
-  if (isDelivery == true) {
+  if (isDelivery === true) {
     pizza.saleType = "delivery";
     pizza.cost += deliveryFee;
 
